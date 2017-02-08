@@ -3,7 +3,7 @@
   "ga_id": "UA-63818301-2",
   "resume_title": "王贤稳",
   "name": "王贤稳",
-  "repo": "https://github.com/MR-HOWE/mr-howe.github.com.git",
+  "repo": "https://github.com/wxweven/resume.git",
   "job_description": ["Java研发工程师"],
   "contact": {
     "phone": "173-1921-5435",
@@ -19,7 +19,7 @@
   },
   "links": [{
     "type": "repo",
-    "url": "https://github.com/wxweven/mr-howe.github.com"
+    "url": "https://github.com/wxweven/resume"
 
   }, {
     "type": "pdf",
@@ -28,10 +28,10 @@
   ],
   "education": [
       {
-          "type": "master",
+          "type": "graduate",
           "name": "重庆邮电大学",
           "major": "计算机科学与技术",
-          "start": "2009",
+          "start": "2013",
           "end": "2016"
       }
   ],
@@ -139,7 +139,7 @@
   }],
   "skills": [
         {
-          "type": "java",
+          "type": "backend",
           "item": [
               {
                 "summary": "`Java` / `Java Web`",
@@ -149,24 +149,16 @@
                 ]
               },
               {
-                "summary": "`ECMAScript`（`JavaScript`）",
+                "summary": "`MySQL`（`DB`）",
                 "description": [
-                  "熟悉 `ECMAScript`（`JavaScript`），对 `JavaScript 引擎`及相关 JIT 技术有一定的了解",
-                  "了解 `ECMAScript` 新标准与相关后处理工具并能在项目中使用"
+                  "熟悉MySQL关系型数据库，并能熟练运用MySQL进行SQL查询，了解SQL运行机制以及SQL性能优化；",
+                  "了解Memcached 、Redis等分布式缓存框架"
                 ]
               },
               {
-                "summary": "`DOM` / `BOM` 及常见 `Web API`",
+                "summary": "Java工程实践",
                 "description": [
-                  "熟悉原生 `DOM` 与 `BOM` 的使用及相关标准（W3C / WHATWG），有桌面 / 移动端前端组件的开发经验",
-                  "对 `WebGL` / `Web Workers` / `WebSocket` / `Web Components` / `SVG` 等 API 有一定的使用经验",
-                  "阅读过 `WebKit` / `Blink` 源码中的部分实现，了解常见的 Web API **兼容性**问题及其解决方案"
-                ]
-              },
-              {
-                "summary": "前端工程实践",
-                "description": [
-                  "使用 `Meteor` / `AngularJS` / `Polymer` 编写过简单的 CRUD SPA，了解 `Backbone.js` / `React` 及前端 `MV*` 模型",
+                  "使用 `Spring` / `SpringMVC` / `MyBatis` `EasyUI` 等技术搭建开源MVC框架",
                   "熟悉 `jQuery` / `jQuery UI` / `Bootstrap` 的使用、定制与扩展, 阅读过部分源代码",
                   "在项目中使用过 `Sea.js` / `RequireJS` / `Browserify` / `Bower` / `WebPack` 等多种模块化解决方案",
                   "在项目中使用过 `Less` / `Sass` / `PostCSS` / `CoffeeScript` / `TypeScript` 等预处理/后处理工具",
@@ -177,22 +169,13 @@
           ]
         },
         {
-            "type": "backend",
+            "type": "frontend",
             "item": [
                 {
-                  "summary": "`Node.js`",
+                  "summary": "`JavaScript` / `HTML` / `CSS` / `React`",
                   "description": [
-                    "能够使用 `Node.js API` / `Express` / `Koa` 搭建简单的后端程序与数据库交互、渲染模板及提供 `RESTful API`",
-                    "了解异步 I/O 及事件驱动的服务器模型，掌握常见的**异步编程**解决方案",
-                    "能编写简单的 `Express` / `Connect` / `Koa` 中间件，使用 `Mocha` 与 `Chai` 编写单元测试"
-                  ]
-                },
-                {
-                  "summary": "其他",
-                  "description": [
-                    "使用 `Tornado` / `Flask`（`Python`） 搭建过简单的服务器",
-                    "有使用 `MongoDB` / `MySQL` 数据库，`Redis` 缓存，`nginx` 反向代理的经验",
-                    "了解 `HTTP`（1.x / 2）、 `TCP/IP`、 `WebSocket` 等协议"
+                    "Web开发基础较为扎实，对前端技术JS、CSS、React JS等有一定的了解和实践",
+                    "了解常见的Web性能优化"
                   ]
                 }
             ]
@@ -201,12 +184,10 @@
             "type": "miscellaneous",
             "item": [
                 "三年 `Linux` 使用经验，熟悉常用命令与配置，能编写简单的 `bash` 脚本",
-                "熟悉多种平台与编译环境下的 `C` / `C++` 及其新标准，编写过简单的解释器、数据库引擎、3D 图形程序及 Node.js 扩展，能阅读 `WebKit` / `Blink、V8` 等常接触项目的源代码并加以利用",
-                "熟悉 `Python`，能实现简单的数据及图像处理工具、自动化脚本、爬虫、机器学习算法及分布式程序（参见 GitHub）",
+                "了解 `Python` / `PHP`，能实现简单的数据及图像处理工具、自动化脚本",
                 "具备基本的 `Web 安全`知识（`X.509` / `XSS` / `CSRF` 等）",
                 "能够使用 `LaTeX` 及 `Markdown` 编写得体的中英文文档或论文，具备良好的技术交流能力",
-                "日常使用 `Git` 与 `Sublime Text` / `Vim` 进行开发，也乐于尝试新工具",
-                "能够使用 `Photoshop` / `Illustrator` 完成简单的设计"
+                "日常使用 `Git` 与 `Sublime Text` / `Vim` / `Eclipse` 进行开发，也乐于尝试新工具"
             ]
         }
     ]

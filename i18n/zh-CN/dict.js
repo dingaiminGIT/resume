@@ -6,13 +6,13 @@ module.exports = {
     skill_type: {
         "frontend": "Web 前端",
         "java": "Java",
-        "backend": "Web 后端",
+        "backend": "Java 服务端",
         "miscellaneous": "其他"
     },
     education_type: {
-        "bachelor": "（学士）",
-        "master": "（学士 硕士）",
-        "doctor": "（博士）"
+        "undergraduate": "（本科）",
+        "graduate": "（研究生）",
+        "postgraduate": "（博士）"
     },
     link_type: {
         "zhihu": "知乎",
