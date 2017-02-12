@@ -26,8 +26,8 @@
 
 .calc-grid-column(@index) {
     .column-@{index} {
-        // width: percentage((@index / @grid-columns));
-        width: 100%
+        width: percentage((@index / @grid-columns));
+        // width: 100%
     }
 }
 
@@ -53,10 +53,12 @@
 
 .first {
    padding-left: 0;
+   width: 45%;
 }
 
 .last {
    padding-right: 0;
+   width: 55%;
 }
 
 .row {
