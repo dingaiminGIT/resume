@@ -4,10 +4,9 @@
     "resume_title": "王贤稳-简历",
     "name": "王贤稳",
     "repo": "https://github.com/wxweven/resume.git",
-    "job_description": ["Java研发工程师"],
-
-
-
+    "job_description": [
+        "Java研发工程师"
+    ],
     "contact": {
         "phone": "173-1921-5435",
         "email": "wxweven@qq.com",
@@ -18,161 +17,200 @@
         "blog": {
             "url": "http://wxweven.win"
         },
-        "localtion": "百度凤巢-商业平台部"
+        "localtion": "美团点评-餐饮生态技术部"
     },
-
-
-
-    "skills": [{
-        "type": "backend",
-        "item": [{
-            "summary": "`Java` / `JavaWeb`",
-            "description": [
-                "JAVA基础扎实，理解多线程、并发、集合等基础框架，熟悉Java常见的设计模式，了解JVM",
-                "熟悉主流开源应用框架，如`Spring`, `MyBatis`, `SpringMVC`, Struts2, Hibernate等开发技术",
-                "理解JavaWeb技术体系结构，理解Servlet、JSP等技术"
+    "skills": [
+        {
+            "type": "backend",
+            "item": [
+                {
+                    "summary": "`Java` / `JavaWeb`",
+                    "description": [
+                        "JAVA基础扎实，理解多线程、并发、集合等基础框架，熟悉Java常见的设计模式，了解JVM",
+                        "熟悉主流开源应用框架，如`Spring`, `MyBatis`, `SpringMVC`等开发技术",
+                        "了解`RabbitMQ`, `Kafka`等消息中间件，`Thrift`, `Dubbo`等RPC框架，了解`ElasticSearch`搜索引擎"
+                    ]
+                },
+                {
+                    "summary": "`MySQL` / `分布式缓存`",
+                    "description": [
+                        "熟悉MySQL，并能熟练运用MySQL进行SQL查询，了解SQL运行机制以及SQL性能优化",
+                        "了解Memcached 、Redis等分布式缓存框架，并能在实际项目中使用Redis优化性能"
+                    ]
+                }
             ]
-        }, {
-            "summary": "`MySQL` / `分布式缓存`",
-            "description": [
-                "熟悉MySQL，并能熟练运用MySQL进行SQL查询，了解SQL运行机制以及SQL性能优化",
-                "了解Memcached 、Redis等分布式缓存框架，并能在实际项目中使用Redis优化性能"
+        },
+        {
+            "type": "frontend",
+            "item": [
+                {
+                    "summary": "`JavaScript` / `HTML` / `CSS` / `React`",
+                    "description": [
+                        "Web开发基础较为扎实，对前端技术`JavaScript`, `CSS`, `React`等有一定的了解和实践",
+                        "了解常见的Web性能优化, 具备基本的Web安全知识（X.509 / XSS / CSRF 等）"
+                    ]
+                }
             ]
-        }]
-    }, {
-        "type": "frontend",
-        "item": [{
-            "summary": "`JavaScript` / `HTML` / `CSS` / `React`",
-            "description": [
-              "Web开发基础较为扎实，对前端技术`JavaScript`, `CSS`, `React`等有一定的了解和实践",
-              "了解常见的Web性能优化, 具备基本的Web安全知识（X.509 / XSS / CSRF 等）"
+        },
+        {
+            "type": "miscellaneous",
+            "item": [
+                "熟悉 `Linux` 基本操作和常用命令，能编写简单的 `bash` 脚本",
+                "了解  `PHP` / `Python`，能实现简单的数据及图像处理工具、自动化脚本",
+                "能够使用 `LaTeX` 及 `Markdown` 编写得体的中英文文档或论文，具备良好的技术交流能力",
+                "日常使用 `Git` / `Maven` 与 `Eclipse` / `Sublime Text` 进行开发，也乐于尝试新工具"
             ]
-        }]
-    }, {
-        "type": "miscellaneous",
-        "item": [
-            "熟悉 `Linux` 基本操作和常用命令，能编写简单的 `bash` 脚本",
-            "了解  `PHP` / `Python`，能实现简单的数据及图像处理工具、自动化脚本",
-            "能够使用 `LaTeX` 及 `Markdown` 编写得体的中英文文档或论文，具备良好的技术交流能力",
-            "日常使用 `Git` / `Maven` 与 `Eclipse` / `Sublime Text` 进行开发，也乐于尝试新工具"
-        ]
-    }],
-
-
-    "language": [{
-        "type": "english",
-        "certificate": [{
-            "type": "CET-4",
-            "full": "710",
-            "score": "593"
-        }, {
-          "type": "CET-6",
-          "full": "710",
-          "score": "585"
-        }],
-        "description": [
-            "能流畅阅读英文专业书籍、文档及其他资料",
-            "可无字幕观看 MOOC 课程、开发者大会视频",
-            "能在英文邮件列表、Stack Overflow等社区正常交流"
-        ]
-    }],
-
-
-
-    "education": [{
-        "university": "重庆邮电大学",
-        "start": "2009",
-        "end": "2016",
-
-        "info": [{
-            "type": "graduate",
-            "major": "计算机科学与技术"
-        }, {
-            "type": "undergraduate",
-            "major": "计算机科学与技术"
-        }]
-    }],
-
-
-
-    "experience": [{
-        "type": "work",
-        "techtype": "frontend",
-        "place": "百度 商业平台部",
-        "start": "2016年12月",
-        "end": "至今",
-        "name": "手机百度Feed流广告项目 — H5 / 前端开发",
-        "description": [
-          "**工作职责**：完成手机百度Feed流广告项目开发工作，包括H5智能广告落地页、广告主广告物料上传/编辑/实时预览等",
-          "**工作简介**：在开发H5智能广告落地页时，`阅读并修改组件源码`，解决了视频播放、页面滑动以及图片切换在不同操作系统、终端、浏览器下的`兼容问题`；在开发广告物料上传/编辑/实时预览等时，开发出通用功能组件，`降低`约5%的`开发量`，提升约5%的总体项目进度",
-          "**主要技术**：H5，JavaScript，React，Fcui2"
-        ],
-        "stack": ["H5", "JavaScript", "React", "Fcui2"],
-        "compatibility": "IE8+"
-    }, {
-        "type": "work",
-        "techtype": "frontend",
-        "place": "百度 商业平台部",
-        "start": "2016年8月",
-        "end": "2016年12月",
-        "name": "百度推广PC端项目 — 前端开发",
-        "description": [
-          "**工作职责**：完成百度推广PC端日常业务的前端开发工作，包括页面布局、组件开发、浏览器兼容等",
-          "**工作简介**：由Java后端转向前端，在`一周时间内`，迅速理解项目中用到的JavaScript、React、RequireJS、Fcui2等技术，并运用到日常业务开发中。通过参与百度推广PC端项目，掌握并实践了前端debug,页面布局、浏览器兼容、Web性能优化等技能；",
-          "**主要技术**：JavaScript，Es6，React，RequireJS，Fcui2"
-        ],
-        "stack": ["JavaScript", "Es6", "React", "RequireJS", "Fcui2"],
-        "compatibility": "IE8+"
-    }, {
-        "type": "internship",
-        "techtype": "backend",
-        "place": "阿里 大数据技术及产品部",
-        "start": "2015年6月",
-        "end": "2015年9月",
-        "name": "生意参谋项目 — Java开发",
-        "description": [
-          "**实习职责**：参与生意参谋平台的Java后端研发，包括生意参谋淘宝卖家中心小站、生意参谋市场行情等",
-          "**实习简介**：通过`阅读、整理Spring/Webx源码`等，深入理解webx工作流程，并运用到实际项目开发中；实习期间，`主动承担高强度的开发任务（主管评价）`，在完成自己工作的同时分担同事的开发任务；将解决项目中遇到bug的过程形成文档以及`技术博客`（详见个人博客）",
-          "**实习收获**：养成了良好的Java代码编写、开发规范，了解了大型网站的架构设计，包括分层、解耦、分布式缓存Tair、分布式服务框架`Dubbo`、分布式消息队列`RocketMQ`等"
-        ],
-        "stack": ["Java", "Spring", "Webx", "MyBatis", "MySQL"],
-        "compatibility": "IE8+"
-    }, {
-        "type": "project",
-        "techtype": "backend",
-        "project_type": "personal",
-        "name": "Mvc 框架",
-        "source": "https://github.com/wxweven/wxwmvc",
-        "description": [
-          "`wxwmvc` 是一个JavaEE项目快速开发脚手架，集成了最常用的框架，适用于`Restfull`架构风格`Web Service`接口开发。",
-          "项目集成`Spring`、`SpringMVC`、`Mybatis`、`Shiro`等框架",
-          "项目提供日志、单元测试、`Mybatis-Pagehelper`、通用上传等常用功能",
-          "项目使用`Maven`构建，服务器默认使用`Tomcat`服务器"
-        ],
-        "stack": ["Spring", "SpringMVC", "MyBatis",  "Shiro", "Maven"],
-        "compatibility": "IE9+"
-    }, {
-        "type": "project",
-        "techtype": "frontend",
-        "project_type": "personal",
-        "name": "Resume简历生成器",
-        "source": "https://github.com/wxweven/resume",
-        "description": [
-          "这份在线简历的生成器,从 JSON 读取数据，使用 `Jade` 模板生成 HTML，`Less` 生成**响应式**样式",
-          "使用 `Gulp` 驱动页面生成、架设本地服务器、帮助部署到 GitHub"
-        ],
-        "stack": ["jade", "less", "gulp"],
-        "compatibility": "IE9+"
-    }],
-
-
-
-    "links": [{
-        "type": "repo",
-        "url": "https://github.com/wxweven/resume"
-
-    }, {
-        "type": "pdf",
-        "url": "static/wxweven.pdf"
-    }]
+        }
+    ],
+    "language": [
+        {
+            "type": "english",
+            "certificate": [
+                {
+                    "type": "CET-4",
+                    "full": "710",
+                    "score": "593"
+                },
+                {
+                    "type": "CET-6",
+                    "full": "710",
+                    "score": "585"
+                }
+            ],
+            "description": [
+                "能流畅阅读英文专业书籍、文档及其他资料",
+                "可无字幕观看 MOOC 课程、开发者大会视频",
+                "能在英文邮件列表、Stack Overflow等社区正常交流"
+            ]
+        }
+    ],
+    "education": [
+        {
+            "university": "重庆邮电大学",
+            "start": "2009",
+            "end": "2016",
+            "info": [
+                {
+                    "type": "graduate",
+                    "major": "计算机科学与技术专业"
+                },
+                {
+                    "type": "undergraduate",
+                    "major": "计算机科学与技术"
+                }
+            ]
+        }
+    ],
+    "experience": [
+        {
+            "type": "work",
+            "techtype": "frontend",
+            "place": "百度 商业平台部",
+            "start": "2016年12月",
+            "end": "至今",
+            "name": "手机百度Feed流广告项目 — H5 / 前端开发",
+            "description": [
+                "**工作职责**：完成手机百度Feed流广告项目开发工作，包括H5智能广告落地页、广告主广告物料上传/编辑/实时预览等",
+                "**工作简介**：在开发H5智能广告落地页时，`阅读并修改组件源码`，解决了视频播放、页面滑动以及图片切换在不同操作系统、终端、浏览器下的`兼容问题`；在开发广告物料上传/编辑/实时预览等时，开发出通用功能组件，`降低`约5%的`开发量`，提升约5%的总体项目进度",
+                "**主要技术**：H5，JavaScript，React，Fcui2"
+            ],
+            "stack": [
+                "H5",
+                "JavaScript",
+                "React",
+                "Fcui2"
+            ],
+            "compatibility": "IE8+"
+        },
+        {
+            "type": "work",
+            "techtype": "frontend",
+            "place": "百度 商业平台部",
+            "start": "2016年7月",
+            "end": "2017年3月",
+            "name": "百度推广PC端项目 — 前端开发",
+            "description": [
+                "**工作职责**：完成百度推广PC端日常业务的前端开发工作，包括页面布局、组件开发、浏览器兼容等",
+                "**工作简介**：由Java后端转向前端，在`一周时间内`，迅速理解项目中用到的JavaScript、React、RequireJS、Fcui2等技术，并运用到日常业务开发中。通过参与百度推广PC端项目，掌握并实践了前端debug,页面布局、浏览器兼容、Web性能优化等技能；",
+                "**主要技术**：JavaScript，Es6，React，RequireJS，Fcui2"
+            ],
+            "stack": [
+                "JavaScript",
+                "Es6",
+                "React",
+                "RequireJS",
+                "Fcui2"
+            ],
+            "compatibility": "IE8+"
+        },
+        {
+            "type": "internship",
+            "techtype": "backend",
+            "place": "阿里 大数据技术及产品部",
+            "start": "2015年6月",
+            "end": "2015年9月",
+            "name": "生意参谋项目 — Java开发",
+            "description": [
+                "**实习职责**：参与生意参谋平台的Java后端研发，包括生意参谋淘宝卖家中心小站、生意参谋市场行情等",
+                "**实习简介**：通过`阅读、整理Spring/Webx源码`等，深入理解webx工作流程，并运用到实际项目开发中；实习期间，`主动承担高强度的开发任务（主管评价）`，在完成自己工作的同时分担同事的开发任务；将解决项目中遇到bug的过程形成文档以及`技术博客`（详见个人博客）",
+                "**实习收获**：养成了良好的Java代码编写、开发规范，了解了大型网站的架构设计，包括分层、解耦、分布式缓存Tair、分布式服务框架`Dubbo`、分布式消息队列`RocketMQ`等"
+            ],
+            "stack": [
+                "Java",
+                "Spring",
+                "Webx",
+                "MyBatis",
+                "MySQL"
+            ],
+            "compatibility": "IE8+"
+        },
+        {
+            "type": "project",
+            "techtype": "backend",
+            "project_type": "personal",
+            "name": "Mvc 框架",
+            "source": "https://github.com/wxweven/wxwmvc",
+            "description": [
+                "`wxwmvc` 是一个JavaEE项目快速开发脚手架，集成了最常用的框架，适用于`Restfull`架构风格`Web Service`接口开发。",
+                "项目集成`Spring`、`SpringMVC`、`Mybatis`、`Shiro`等框架",
+                "项目提供日志、单元测试、`Mybatis-Pagehelper`、通用上传等常用功能",
+                "项目使用`Maven`构建，服务器默认使用`Tomcat`服务器"
+            ],
+            "stack": [
+                "Spring",
+                "SpringMVC",
+                "MyBatis",
+                "Shiro",
+                "Maven"
+            ],
+            "compatibility": "IE9+"
+        },
+        {
+            "type": "project",
+            "techtype": "frontend",
+            "project_type": "personal",
+            "name": "Resume简历生成器",
+            "source": "https://github.com/wxweven/resume",
+            "description": [
+                "这份在线简历的生成器,从 JSON 读取数据，使用 `Jade` 模板生成 HTML，`Less` 生成**响应式**样式",
+                "使用 `Gulp` 驱动页面生成、架设本地服务器、帮助部署到 GitHub"
+            ],
+            "stack": [
+                "jade",
+                "less",
+                "gulp"
+            ],
+            "compatibility": "IE9+"
+        }
+    ],
+    "links": [
+        {
+            "type": "repo",
+            "url": "https://github.com/wxweven/resume"
+        },
+        {
+            "type": "pdf",
+            "url": "static/wxweven.pdf"
+        }
+    ]
 }
