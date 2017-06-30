@@ -19,52 +19,28 @@
         },
         "localtion": "美团点评-餐饮生态技术部"
     },
-    "skills": [
+    "education": [
         {
-            "type": "backend",
-            "item": [
+            "university": "重庆邮电大学",
+            "info": [
                 {
-                    "summary": "`Java` / `JavaWeb`",
-                    "description": [
-                        "JAVA基础扎实，理解多线程、并发、集合等基础框架，熟悉Java常见的设计模式，了解JVM",
-                        "熟悉主流开源应用框架，如`Spring`, `MyBatis`, `SpringMVC`等开发技术",
-                        "了解`RabbitMQ`, `Kafka`等消息中间件，`Thrift`, `Dubbo`等RPC框架，了解`ElasticSearch`搜索引擎"
-                    ]
+                    "type": "undergraduate",
+                    "major": "计算机科学与技术专业",
+                    "start": "2009-09",
+                    "end": "2013-06"
                 },
                 {
-                    "summary": "`MySQL` / `分布式缓存`",
-                    "description": [
-                        "熟悉MySQL，并能熟练运用MySQL进行SQL查询，了解SQL运行机制以及SQL性能优化",
-                        "了解Memcached 、Redis等分布式缓存框架，并能在实际项目中使用Redis优化性能"
-                    ]
+                    "type": "graduate",
+                    "major": "计算机科学与技术专业",
+                    "start": "2013-09",
+                    "end": "2016-06"
                 }
-            ]
-        },
-        {
-            "type": "frontend",
-            "item": [
-                {
-                    "summary": "`JavaScript` / `HTML` / `CSS` / `React`",
-                    "description": [
-                        "Web开发基础较为扎实，对前端技术`JavaScript`, `CSS`, `React`等有一定的了解和实践",
-                        "了解常见的Web性能优化, 具备基本的Web安全知识（X.509 / XSS / CSRF 等）"
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "miscellaneous",
-            "item": [
-                "熟悉 `Linux` 基本操作和常用命令，能编写简单的 `bash` 脚本",
-                "了解  `PHP` / `Python`，能实现简单的数据及图像处理工具、自动化脚本",
-                "能够使用 `LaTeX` 及 `Markdown` 编写得体的中英文文档或论文，具备良好的技术交流能力",
-                "日常使用 `Git` / `Maven` 与 `Eclipse` / `Sublime Text` 进行开发，也乐于尝试新工具"
             ]
         }
     ],
     "language": [
         {
-            "type": "english",
+            "type": "CET-4 / CET-6",
             "certificate": [
                 {
                     "type": "CET-4",
@@ -84,19 +60,37 @@
             ]
         }
     ],
-    "education": [
+    "skills": [
         {
-            "university": "重庆邮电大学",
-            "start": "2009",
-            "end": "2016",
-            "info": [
+            "type": "backend",
+            "item": [
                 {
-                    "type": "graduate",
-                    "major": "计算机科学与技术专业"
+                    "summary": "`Java` / `JavaWeb`",
+                    "description": [
+                        "`JAVA`基础扎实，理解`IO/NIO`、并发、集合等基础框架，对JVM原理有一定的了解",
+                        "熟悉主流开源应用框架，如`Spring`, `MyBatis`, `SpringMVC`，`Spring Boot`等开发技术",
+                        "理解`Netty`高性能网络框架，了解`RabbitMQ`, `Kafka`等消息中间件，`Thrift`, `Dubbo`等RPC框架，了解`ElasticSearch`搜索引擎",
+                        "熟悉 `Linux` 基本操作和常用命令，能编写简单的 `bash` 脚本, 熟练使用`Git` / `Maven` / `Markdown`等工具"
+                    ]
                 },
                 {
-                    "type": "undergraduate",
-                    "major": "计算机科学与技术"
+                    "summary": "`MySQL` / `分布式缓存`",
+                    "description": [
+                        "熟悉MySQL，并能熟练运用MySQL进行SQL查询，了解SQL运行机制以及SQL性能优化；",
+                        "了解Memcached、Redis等分布式缓存框架，并能在实际项目中使用Redis优化性能；"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "frontend",
+            "item": [
+                {
+                    "summary": "`JavaScript` / `HTML` / `CSS` / `React`",
+                    "description": [
+                        "Web开发基础较为扎实，对前端技术`JavaScript`, `CSS`, `React`等有一定的了解和实践",
+                        "了解常见的Web性能优化，具备基本的Web安全知识（X.509 / XSS / CSRF 等）"
+                    ]
                 }
             ]
         }

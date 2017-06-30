@@ -10,9 +10,23 @@ block skills
         +#{"skills_" + item.type}(item)
 
 
+//- block language
+//-   +section("language", true)
+//-     each lang in language
+      //- li.timeline-item(class="skills-" + lang.type)
+      //-   h3.timeline-title
+      //-     span.lang-type #{lang.type}
+//-           //- +certificate(lang.certificate)
+//-       //- ul.language-description
+//-       //-   each desc in lang.description
+//-       //-     li.language-desc-item= desc
+
 block language
-  +section("language", false)
+  +section("language", true)
     each lang in language
+      li.timeline-item(class="lang-cet")
+        h3.timeline-title
+          span.lang-type #{lang.type}
       +certificate(lang.certificate)
       ul.language-description
         each desc in lang.description
@@ -24,11 +38,10 @@ block education
     each item in education
       li.timeline-item(class="education-" + item.info[0].type)
         h3.timeline-title
-          time.education-time #{item.start} ~ #{item.end}
+          time.education-name #{item.university}
         dl.education-description.timeline-content
-          dt.education-name= item.university
           each info in item.info
-            dd.education-major= info.major + education_type[info.type]
+              dd.education-major #{info.start} ~ #{info.end} #{info.major} #{education_type[info.type]}
           //- each honor in item.honor
           //-   dd.education-honor!= highlight(honor)
 
