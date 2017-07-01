@@ -25,17 +25,22 @@ module.exports = {
             "ch": "教育经历",
             "en": "Education"
         },
-        "language": {
-            "ch": "英语水平",
-            "en": "English Level"
+        "skills": {
+            "ch": "专业技能",
+            "en": "Programming Skills"
         },
+
         "experience": {
             "ch": "工作经历",
             "en": "Experience"
         },
-        "skills": {
-            "ch": "专业技能",
-            "en": "Programming Skills"
+        "project": {
+            "ch": "个人项目",
+            "en": "Project"
+        },
+        "language": {
+            "ch": "英语水平",
+            "en": "English Level"
         }
     },
     lt_ie8_comment: "你正在使用 IE8 或更老的古董浏览器，还是快升级或者换浏览器吧~",
@@ -44,6 +49,8 @@ module.exports = {
         demo: "Demo"
     },
     project_type: {
+        "java": "Java开源项目",
+        "frontend": "前端开源项目",
         "personal": "个人项目"
     }
 };
