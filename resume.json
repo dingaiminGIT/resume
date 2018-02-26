@@ -43,18 +43,15 @@
             "type": "backend",
             "item": [
                 {
-                    "summary": "`Java` / `JavaWeb`",
+                    "summary": "",
                     "description": [
-                        "`JAVA`基础扎实，理解`IO/NIO`、并发、集合等基础框架，熟悉Java常见设计模式，对`JVM`原理有一定的了解",
+                        "`JAVA`基础扎实，理解`IO/NIO`、并发/多线程、集合等基础框架，熟悉Java常见设计模式，对`JVM`原理有一定的了解",
                         "熟悉主流开源应用框架，如`Spring`, `MyBatis`, `SpringMVC`，`Spring Boot`等开发技术",
-                        "理解`Netty`高性能网络框架，了解`RabbitMQ`, `Kafka`等消息中间件，`Thrift`, `Dubbo`等RPC框架，了解`ElasticSearch`搜索引擎"
-                    ]
-                },
-                {
-                    "summary": "`MySQL` / `缓存`",
-                    "description": [
-                        "熟悉`MySQL`，并能熟练运用MySQL进行SQL查询，了解SQL运行机制以及SQL性能优化；",
-                        "了解`Memcached`、`Redis`等缓存框架，并能在实际项目中使用Redis优化性能；"
+                        "了解基础服务组件相关开发，如分布式、缓存、消息队列等；能对分布式常用技术进行合理应用，解决问题", 
+                        "理解`Netty`高性能网络框架，了解`ElasticSearch`搜索引擎并有相关开发、优化经验",
+                        "熟悉`MySQL`，并能熟练运用MySQL进行SQL查询，熟悉MySQL索引以及常见SQL性能优化；",
+                        "了解`Redis`、`Tair`等缓存框架，并能在实际项目中使用缓存优化性能；",
+                        "熟悉 `Linux` 基本操作和常用命令，了解 `Python`，能实现简单的数据处理工具、自动化脚本"
                     ]
                 }
             ]
@@ -74,7 +71,6 @@
         {
             "type": "miscellaneous",
             "item": [
-                "熟悉 `Linux` 基本操作和常用命令，能编写简单的 `bash` 脚本，了解  `PHP` / `Python`，能实现简单的数据处理工具、自动化脚本",
                 "能够使用 `LaTeX` 及 `Markdown` 编写得体的中英文文档或论文，具备良好的技术交流能力",
                 "日常使用 `Git` / `Maven` 与 `Idea` / `Eclipse` / `Sublime Text` 进行开发，也乐于尝试新工具"
             ]
@@ -85,8 +81,31 @@
             "type": "work",
             "techtype": "java",
             "place": "美团 - 餐饮生态技术部 - Java研发",
-            "start": "2017年3月",
+            "start": "2017年11月",
             "end": "至今",
+            "name": "美团商城 — Java / 后端开发",
+            "description": [
+                "**工作职责**：从0到1建设自有线上交易商城--美团商城",
+                "**工作简介**：从无到有建设自有线上售卖系统--美团商城（类似小米商城），负责`订单交易`、`分销联盟`、用户系统等模块的设计与开发，交易系统`稳定性4个9`，单机`QPS>200`，服务时延`TP99<50ms`",
+                "**主要技术**：Java8̵, Spring, SpringMvc, Mybatis̵, Mysql, Tair, Thrift, ElasticSearch, DataBus"
+            ],
+            "stack": [
+                "Java8̵",
+                "Spring",
+                "Mybatis̵",
+                "Thrift",
+                "ElasticSearch",
+                "DataBus",
+                "Tair"
+            ],
+            "compatibility": "Java8"
+        },
+        {
+            "type": "work",
+            "techtype": "java",
+            "place": "美团 - 餐饮生态技术部 - Java研发",
+            "start": "2017年3月",
+            "end": "2017年10月",
             "name": "美团点评餐饮生态系统建设 — Java / 后端开发",
             "description": [
                 "**工作职责**：负责美团点评餐饮生态系统（包括商机、销售、审核、收款、派单等子系统）建设，完成需求把控、系统设计、功能开发，把纷繁的业务需求拆解细化并实施",
@@ -107,8 +126,8 @@
         {
             "type": "work",
             "techtype": "frontend",
-            "place": "百度 - 商业平台部 - H5开发",
-            "start": "2016年12月",
+            "place": "百度 - 商业平台部 - 前端开发",
+            "start": "2016年6月",
             "end": "2017年2月",
             "name": "手机百度Feed流广告项目 — H5 / 前端开发",
             "description": [
@@ -120,27 +139,6 @@
                 "H5",
                 "JavaScript",
                 "React",
-                "Fcui2"
-            ],
-            "compatibility": "IE8+"
-        },
-        {
-            "type": "work",
-            "techtype": "frontend",
-            "place": "百度 - 商业平台部 - React前端开发",
-            "start": "2016年7月",
-            "end": "2016年12月",
-            "name": "百度推广PC端项目 — 前端开发",
-            "description": [
-                "**工作职责**：完成百度推广PC端日常业务的前端开发工作，包括页面布局、组件开发、浏览器兼容等",
-                "**工作简介**：由Java后端转向前端，在`一周时间内`，迅速理解项目中用到的JavaScript、React、RequireJS、Fcui2等技术，并运用到日常业务开发中。通过参与百度推广PC端项目，掌握并实践了前端debug,页面布局、浏览器兼容、Web性能优化等技能；",
-                "**主要技术**：JavaScript，Es6，React，RequireJS，Fcui2"
-            ],
-            "stack": [
-                "JavaScript",
-                "Es6",
-                "React",
-                "RequireJS",
                 "Fcui2"
             ],
             "compatibility": "IE8+"
