@@ -1,6 +1,19 @@
 extends ./layout/resume-layout.jade
 include ./mixins/util.jade
 
+block education
+  +section("education", true)
+    each item in education
+      li.timeline-item(class="education-" + item.info[0].type)
+        h3.timeline-title
+          time.education-name #{item.university}
+        dl.education-description.timeline-content
+          each info in item.info
+              dd.education-major #{info.start} ~ #{info.end} #{info.major} #{education_type[info.type]}
+          //- each honor in item.honor
+          //-   dd.education-honor!= highlight(honor)
+
+
 block skills
   +section("skills", true)
     each item in skills
@@ -10,38 +23,36 @@ block skills
         +#{"skills_" + item.type}(item)
 
 
-block language
-  +section("language", false)
-    each lang in language
-      +certificate(lang.certificate)
-      ul.language-description
-        each desc in lang.description
-          li.language-desc-item= desc
-
-
-block education
-  +section("education", true)
-    each item in education
-      li.timeline-item(class="education-" + item.info[0].type)
-        h3.timeline-title
-          time.education-time #{item.start} ~ #{item.end}
-        dl.education-description.timeline-content
-          dt.education-name= item.university
-          each info in item.info
-            dd.education-major= info.major + education_type[info.type]
-          //- each honor in item.honor
-          //-   dd.education-honor!= highlight(honor)
-
-
 block experience
   +section("experience", true)
-    each item in experience
-      li.timeline-item(class="experience-" + item.type)
+    each item, index in experience
+      li.timeline-item(class="experience-" + item.techtype)
         h3.timeline-title
           +#{"experience_title_" + item.type}(item)
         dl.experience-description.timeline-content
           +#{"experience_content_" + item.type}(item)
 
+
+block project
+  +section("project", true)
+    each prop in project
+      li.timeline-item(class="propject-"+ prop.project_type)
+        h3.timeline-title
+          +#{"project_title_" + prop.project_type}(prop)
+        dl.project-description.timeline-content
+          +#{"project_content_" + prop.techtype}(prop)
+      
+
+block language
+  +section("language", true)
+    each lang in language
+      li.timeline-item(class="lang-cet")
+        h3.timeline-title
+          span.lang-type #{lang.type}
+      +certificate(lang.certificate)
+      ul.language-description
+        each desc in lang.description
+          li.language-desc-item= desc
 
 
 block links
