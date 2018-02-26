@@ -10,8 +10,8 @@ module.exports = {
         "miscellaneous": "其他"
     },
     education_type: {
-        "undergraduate": "（本科）",
-        "graduate": "（研究生）",
+        "undergraduate": "（全日制-本科）",
+        "graduate": "（全日制-研究生）",
         "postgraduate": "（博士）"
     },
     link_type: {
