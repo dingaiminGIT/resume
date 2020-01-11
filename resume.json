@@ -1,7 +1,7 @@
 {
     "data_lang": "zh-CN",
     "ga_id": "UA-63818301-2",
-    "resume_title": "王贤稳-Java-美团-17319215435",
+    "resume_title": "王贤稳-Java-猿辅导-17319215435",
     "name": "王贤稳",
     "repo": "https://github.com/wxweven/resume.git",
     "job_description": [
@@ -48,7 +48,7 @@
                         "`JAVA`基础扎实，理解`IO/NIO`、并发/多线程、集合等基础框架，熟悉Java常见设计模式，对`JVM`原理有一定的了解",
                         "熟悉Java主流开源应用框架，如Spring，MyBatis，SpringMVC，SpringBoot等开发技术",
                         "熟悉`MySQL`，并能熟练运用MySQL进行SQL查询，熟悉MySQL索引以及常见SQL性能优化",
-                        "了解常见基础组件，如`Redis`、`Netty`、ElasticSearch、Kafka等；能对常用中间件技术进行合理应用，解决问题",
+                        "熟练使用常见基础组件，如`Redis`、`Netty`、ElasticSearch、Kafka等，对于中间件原理有一定的理解",
                         "熟悉 `Linux` 基本操作和常用命令，了解 `Python`，能实现简单的数据处理工具、自动化脚本"
                     ]
                 }
@@ -84,8 +84,8 @@
             "name": "猿辅导APP首页 — Java / 后端开发",
             "description": [
                 "**工作职责**：负责猿辅导APP首页服务端",
-                "**工作简介**：负责猿辅导APP首页服务端功能的设计和开发，包括首页班课数据展示、首页广告位、运营活动等功能，保证猿辅导首页高可用、高性能、高扩展。猿辅导首页，依据用户标签，展现个性化内容首页;基于配置和运营平台，实现首页数据的扩展",
-                "**主要技术**：Java8̵, Spring, SpringBoot, Mybatis̵, Mysql, Redis, Thrift, MQ"
+                "**工作简介**：负责猿辅导APP首页服务端功能的设计和开发，包括首页班课数据展示、首页广告位、运营活动等功能，保证猿辅导首页高可用、高性能、高扩展。利用Redis、本地缓存和分布式限流、hystrix降级，保证首页的可用性和高性能；猿辅导首页，依据用户标签，展现个性化内容首页；基于配置和运营平台，实现首页数据的扩展",
+                "**主要技术**：Java8̵, Spring, SpringBoot, Mybatis̵, Mysql, Redis, Hystrix, Thrift, MQ"
             ],
             "stack": [
                 "Java8̵",
