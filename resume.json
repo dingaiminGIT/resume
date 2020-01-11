@@ -17,7 +17,7 @@
         "blog": {
             "url": "http://wxweven.win"
         },
-        "localtion": "美团点评-餐饮生态技术部"
+        "localtion": "北京-猿辅导"
     },
     "education": [
         {
@@ -46,9 +46,9 @@
                     "summary": "",
                     "description": [
                         "`JAVA`基础扎实，理解`IO/NIO`、并发/多线程、集合等基础框架，熟悉Java常见设计模式，对`JVM`原理有一定的了解",
-                        "熟悉主流开源应用框架，如Spring，MyBatis，SpringMVC，Spring Boot等开发技术",
+                        "熟悉Java主流开源应用框架，如Spring，MyBatis，SpringMVC，SpringBoot等开发技术",
                         "熟悉`MySQL`，并能熟练运用MySQL进行SQL查询，熟悉MySQL索引以及常见SQL性能优化",
-                        "了解常见基础组件，如`Redis`/Tair缓存、`Netty`、ES、MQ等；能对常用中间件技术进行合理应用，解决问题",
+                        "了解常见基础组件，如`Redis`、`Netty`、ElasticSearch、Kafka等；能对常用中间件技术进行合理应用，解决问题",
                         "熟悉 `Linux` 基本操作和常用命令，了解 `Python`，能实现简单的数据处理工具、自动化脚本"
                     ]
                 }
@@ -69,7 +69,7 @@
         {
             "type": "miscellaneous",
             "item": [
-                "能够使用 `LaTeX` 及 `Markdown` 编写得体的中英文文档或论文，具备良好的技术交流能力",
+                "能够使用 `Markdown` 编写得体的中英文文档或论文，具备良好的技术交流能力",
                 "日常使用 `Git` / `Maven` 与 `Idea` / `Eclipse` / `Sublime Text` 进行开发，也乐于尝试新工具"
             ]
         }
@@ -78,13 +78,36 @@
         {
             "type": "work",
             "techtype": "java",
+            "place": "猿辅导 - 辅导研发部 - Java研发",
+            "start": "2019年3月",
+            "end": "至今",
+            "name": "猿辅导APP首页 — Java / 后端开发",
+            "description": [
+                "**工作职责**：负责猿辅导APP首页服务端",
+                "**工作简介**：负责猿辅导APP首页服务端功能的设计和开发，包括首页班课数据展示、首页广告位、运营活动等功能，保证猿辅导首页高可用、高性能、高扩展。猿辅导首页，依据用户标签，展现个性化内容首页;基于配置和运营平台，实现首页数据的扩展",
+                "**主要技术**：Java8̵, Spring, SpringBoot, Mybatis̵, Mysql, Redis, Thrift, MQ"
+            ],
+            "stack": [
+                "Java8̵",
+                "Spring",
+                "Mybatis̵",
+                "Thrift",
+                "ElasticSearch",
+                "DataBus",
+                "Tair"
+            ],
+            "compatibility": "Java8"
+        },
+        {
+            "type": "work",
+            "techtype": "java",
             "place": "美团 - 餐饮生态技术部 - Java研发",
             "start": "2017年11月",
-            "end": "至今",
+            "end": "2019年2月",
             "name": "美团商城 — Java / 后端开发",
             "description": [
                 "**工作职责**：从0到1建设自有线上交易商城--美团商城",
-                "**工作简介**：从无到有建设自有线上售卖系统--美团商城（类似小米商城），负责`订单交易`、`分销联盟`、用户系统等模块的设计与开发，交易系统`稳定性4个9`，单机`QPS>200`，服务时延`TP99<100ms`",
+                "**工作简介**：从无到有建设自有线上售卖系统--美团商城（类似小米商城），负责`订单交易`、`分销联盟`、用户系统等模块的设计与开发，交易系统`稳定性4个9`，服务时延`TP99<100ms`",
                 "**主要技术**：Java8̵, Spring, SpringMvc, Mybatis̵, Mysql, Tair, Thrift, ElasticSearch, DataBus"
             ],
             "stack": [
@@ -107,7 +130,7 @@
             "name": "美团点评餐饮生态系统建设 — Java / 后端开发",
             "description": [
                 "**工作职责**：负责美团点评餐饮生态系统（包括商机、销售、审核、收款、派单等子系统）建设，完成需求把控、系统设计、功能开发，把纷繁的业务需求拆解细化并实施",
-                "**工作简介**：参与梳理项目开发架构、ER模型以及业务架构。实际项目开发中，使用OCTO完成后端微服务治理、Thrift完成前后端分离、微服务通信，采用Tair完成数据缓存，利用ElasticSearch、DataBus完成数据搜索，基于Netty完成高性能文件服务器；服务跨机房、多机器容灾部署，可用性达到99.99%，服务时延top99<=200ms",
+                "**工作简介**：参与梳理项目开发架构、ER模型以及业务架构。实际项目开发中，使用OCTO完成后端微服务治理、Thrift完成前后端分离、微服务通信，采用Tair完成数据缓存，利用ElasticSearch、DataBus完成数据搜索；服务跨机房、多机器容灾部署，可用性达到99.99%，服务时延top99<=200ms",
                 "**主要技术**：Java8̵, Spring, SpringMvc, Mybatis̵, Mysql, Tair, Thrift, ElasticSearch, DataBus"
             ],
             "stack": [
