@@ -6,7 +6,7 @@ Written with Gulp, Less, and Jade.
 
 ## Require
 1. Node.js is must be v7.0.0,link https://nodejs.org/download/release/v7.0.0/
-2. gulp must be 3.9.1
+2. gulp must be v3.9.1
 https://shimo.im/docs/hP8ghCcKt3VVWrgJ/read
 
 ## Build
