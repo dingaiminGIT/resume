@@ -120,3 +120,14 @@ mixin project_content_frontend(item)
   dt.experience-project-name= item.name
   each desc in item.description
     dd.project-task!= highlight(desc)
+
+mixin evaluation_basic(item)
+  dl.evaluation-description.timeline-content
+    each evaluation in item.item
+      dt.evaluation-item-summary!= highlight(evaluation.summary)
+      each desc in evaluation.description
+        dd.evaluation-item-description
+          span!= highlight(desc)
+
+mixin evaluation_Selfevaluation(item)
+  +evaluation_basic(item)(attributes)

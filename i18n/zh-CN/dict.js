@@ -9,10 +9,13 @@ module.exports = {
         "backend": "Java 服务端",
         "miscellaneous": "其他"
     },
+    evaluation_type: {
+        "Selfevaluation": " "
+    },
     education_type: {
-        "undergraduate": "（本科）",
-        "graduate": "（研究生）",
-        "postgraduate": "（博士）"
+        "undergraduate": "（全日制-本科）",
+        "graduate": "（全日制-研究生）",
+        "postgraduate": "（全日制-博士）"
     },
     link_type: {
         "zhihu": "知乎",
@@ -41,6 +44,10 @@ module.exports = {
         "language": {
             "ch": "英语水平",
             "en": "English Level"
+        },
+        "evaluation": {
+            "ch": "自我评价",
+            "en": "Self Evaluation"
         }
     },
     lt_ie8_comment: "你正在使用 IE8 或更老的古董浏览器，还是快升级或者换浏览器吧~",

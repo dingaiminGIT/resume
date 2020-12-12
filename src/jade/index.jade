@@ -33,15 +33,15 @@ block experience
           +#{"experience_content_" + item.type}(item)
 
 
-block project
-  +section("project", true)
-    each prop in project
-      li.timeline-item(class="propject-"+ prop.project_type)
-        h3.timeline-title
-          +#{"project_title_" + prop.project_type}(prop)
-        dl.project-description.timeline-content
-          +#{"project_content_" + prop.techtype}(prop)
-      
+//block project
+//  +section("project", true)
+//    each prop in project
+//      li.timeline-item(class="propject-"+ prop.project_type)
+//        h3.timeline-title
+//          +#{"project_title_" + prop.project_type}(prop)
+//        dl.project-description.timeline-content
+//          +#{"project_content_" + prop.techtype}(prop)
+
 
 block language
   +section("language", true)
@@ -54,12 +54,19 @@ block language
         each desc in lang.description
           li.language-desc-item= desc
 
+block evaluation
+  +section("evaluation", true)
+    each item in evaluation
+      li.timeline-item(class="evaluation-" + item.type)
+        h3.timeline-title
+          span.evaluation-type= evaluation_type[item.type]
+        +#{"evaluation_" + item.type}(item)
 
-block links
-    ul.links
-      each link in links
-        li.link
-          a(href=link.url)= link_type[link.type]
+//block links
+//    ul.links
+//      each link in links
+//        li.link
+//          a(href=link.url)= link_type[link.type]
 
 //- block repo
 //-   p

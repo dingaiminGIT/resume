@@ -7,6 +7,9 @@ module.exports = {
         "backend": "Backend Development",
         "miscellaneous": "Miscellaneous"
     },
+    evaluation_type: {
+        "Selfevaluation": ""
+    },
     education_type: {
         "undergraduate": "(Bachelor's degree)"
     },
@@ -32,6 +35,10 @@ module.exports = {
         "skills": {
             "ch": "Skills",
             "en": "Skills"
+        },
+        "evaluation": {
+            "ch": "Self Evaluation",
+            "en": "Self Evaluation"
         }
     },
     lt_ie8_comment: "You are using IE8 or lower version of IE, which is not supported."
