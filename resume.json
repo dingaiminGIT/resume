@@ -71,22 +71,8 @@
                 "**工作职责**：主要负责服务商系统的梧桐策略管理系统的后端建设",
                 "**工作简介**：从0到1搭建梧桐策略管理系统并持续迭代优化",
                 "**工作成果**: 完成梧桐策略管理系统从0到1的搭建以及后续的迭代升级;设计开发任务`自动下发`代替人工下发，15人2-3天的工作量->系统3小时，覆盖大盘 93%的账户消耗;设计`闭环监控`代替人工监控，最快可以小时级回收数据;主动开发线上case排查工具，排查时间由20min->秒级;给系统增加丰富的监控以及自动处理任务，先于业务方反馈case",
-                "**主要技术**：Java8, Scala，SparkSQL，PySQL，Spring, SpringBoot, Ebean, MySQL, Redis, ES, MQ"
-            ],
-            "stack": [
-                "Java8̵",
-                "Scala",
-                "SparkSQL",
-                "PySQL",
-                "Spring",
-                "SpringBoot",
-                "Ebean",
-                "MySQL",
-                "Redis",
-                "ES",
-                "MQ"
-            ],
-            "compatibility": "Java8"
+                "**主要技术**：Java8、Scala、SparkSQL、PySQL、Spring、SpringBoot、Ebean、MySQL、Redis、ES、MQ"
+            ]
         },
         {
             "type": "work",
@@ -98,24 +84,15 @@
             "description": [
                 "**工作职责**：负责商业广告外投系统DSP服务端",
                 "**工作简介**：广告投放平台的建设、对接外部ADX来扩容流量池、广告检索和召回迭代与优化",
-                "**工作成果**: 用Redis缓存帖子数量、帖子最小出价、频控等信息，提高服务的性能;用本地缓存缓存媒体/广告位/样式等信息，来提高服务的性能;根据我们的业务特点定制优化ES倒排索引，使`Search QPS由4k->20k+ 提升400%`,`Search latency由0,41ms->0.2ms 降低50%`, `CPU占用降低70%`;用long型三维数组定制化IPCache，高32位存写入时间，低32位存localId实现`FreeGC`;将ES倒排索引由别名访问改成主备双集群部署达到物理隔离，同时增加重启主备集群的脚本实现秒级恢复索引，且加入灰度切换主备索引的开关，从而使系统有更高的可用性和稳定性;采用服务管理平台+客户端限流措施，保证服务的可用性；基于配置中心和实验平台实现实时感知配置变更，提高了扩展性。系统`可用性4个9`，`QPS20w`，`服务时延TP999<50ms`",
-                "**主要技术**：Java8̵, Spring, SpringBoot, Mybatis, SCF, MySQL, Redis, ES, Canal, MQ, Vertx, Nacos"
-            ],
-            "stack": [
-                "Java8̵",
-                "Spring",
-                "SpringBoot",
-                "Mybatis̵",
-                "SCF",
-                "Mysql",
-                "Redis",
-                "ES",
-                "Canal",
-                "MQ",
-                "Vertx",
-                "Nacos"
-            ],
-            "compatibility": "Java8"
+                "**工作成果**: 用Redis缓存帖子数量、帖子最小出价、频控等信息，提高服务的性能;用本地缓存缓存媒体/广告位/样式等信息，来提高服务的性能;根据我们的业务特点定制优化ES倒排索引，使`Search QPS由4k->20k+ 提升400%`,`Search latency由0,41ms->0.2ms 降低50%`, `CPU占用降低70%`;用long型三维数组定制化IPCache，高32位存写入时间，低32位存localId实现`FreeGC`;将ES倒排索引由别名访问改成主备双集群部署达到物理隔离，同时增加重启主备集群的脚本实现秒级恢复索引，且加入灰度切换主备索引的开关，从而使系统有更高的可用性和稳定性;采用服务管理平台+客户端限流措施，保证服务的可用性；基于配置中心和实验平台实现实时感知配置变更，提高了扩展性。系统`可用性4个9`，`QPS20w`，`服务时延TP999<50ms`;在`40wQPS`的入口流量下紧用`百兆内存`达到快速判断一个用户是否登录过app(用户量是亿级别)）",
+                "**主要技术**：Java8̵, Spring, SpringBoot, Mybatis, SCF, MySQL, Redis, ES, Canal, MQ, Vertx, Nacos、Prometheus、Grafana",
+                "**如何快速判断一个用户是否访问过我们的APP方案设计**：https://blog.csdn.net/dam454450872/article/details/107925564",
+                "**广告倒排索引架构与优化**：https://blog.csdn.net/dam454450872/article/details/92427065",
+                "**广告倒排索引双集群方案及优化**：https://blog.csdn.net/dam454450872/article/details/103360265",
+                "**gc问题排查**：https://blog.csdn.net/dam454450872/article/details/89977927、https://blog.csdn.net/dam454450872/article/details/90166094、https://blog.csdn.net/dam454450872/article/details/100065622",
+                "**Top99超时排查**：https://blog.csdn.net/dam454450872/article/details/110848633",
+                "**查询DB超时连接断开**：https://app.yinxiang.com/fx/5f65624e-f698-43db-86e9-f5f21213b7b6"
+            ]
         }
     ],
     "language": [
