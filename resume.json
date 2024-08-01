@@ -68,10 +68,12 @@
             "end": "至今",
             "name": "服务商系统 — Java / 后端开发",
             "description": [
-                "**工作职责**：主要负责服务商系统的梧桐策略管理系统的后端建设",
+                "**工作职责**：主要负责腾讯广告服务商系统的梧桐策略管理系统、服务商业务单元的后端建设",
                 "**工作简介**：从0到1搭建梧桐策略管理系统并持续迭代优化",
-                "**工作成果**: 完成梧桐策略管理系统从0到1的搭建以及后续的迭代升级;设计开发任务`自动下发`代替人工下发，15人2-3天的工作量->系统3小时，覆盖大盘 93%的账户消耗;设计`闭环监控`代替人工监控，最快可以小时级回收数据;主动开发线上case排查工具，排查时间由20min->秒级;给系统增加丰富的监控以及自动处理任务，先于业务方反馈case",
-                "**主要技术**：Java8、Scala、SparkSQL、PySQL、Spring、SpringBoot、Ebean、MySQL、Redis、ES、MQ"
+                "**工作成果**: 完成梧桐策略管理系统从0到1的搭建以及后续的迭代升级;设计开发任务`自动下发`代替人工下发，15人2-3天的工作量->系统3小时，覆盖大盘93%的账户消耗;设计`闭环监控`代替人工监控，最快可以小时级回收数据;主动开发线上case排查工具，排查时间由20min->秒级;给系统增加丰富的监控以及自动处理任务，先于业务方反馈case;重构项目提升了可读性以及可扩展性;用缓存+分布式锁优化接口性能，40s->毫秒级",
+                "**主要技术**：Java8、Scala、SparkSQL、PySQL、Spring、SpringBoot、Ebean、MySQL、Redis、ES、MQ",
+                "**缓存+分布式锁优化接口性能**：https://blog.csdn.net/dam454450872/article/details/140835734",
+                "**查询DB超时连接断开**：https://app.yinxiang.com/fx/5f65624e-f698-43db-86e9-f5f21213b7b6"
             ]
         },
         {
@@ -90,8 +92,7 @@
                 "**广告倒排索引架构与优化**：https://blog.csdn.net/dam454450872/article/details/92427065",
                 "**广告倒排索引双集群方案及优化**：https://blog.csdn.net/dam454450872/article/details/103360265",
                 "**gc问题排查**：https://blog.csdn.net/dam454450872/article/details/89977927、https://blog.csdn.net/dam454450872/article/details/90166094、https://blog.csdn.net/dam454450872/article/details/100065622",
-                "**Top99超时排查**：https://blog.csdn.net/dam454450872/article/details/110848633",
-                "**查询DB超时连接断开**：https://app.yinxiang.com/fx/5f65624e-f698-43db-86e9-f5f21213b7b6"
+                "**Top99超时排查**：https://blog.csdn.net/dam454450872/article/details/110848633"
             ]
         }
     ],
