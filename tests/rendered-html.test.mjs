@@ -14,5 +14,6 @@ test("renders the resume shell", async () => {
   assert.match(html, /基本信息/);
   assert.match(html, /打印 \/ PDF/);
   assert.match(html, /上传微信二维码/);
+  assert.match(html, /自动识别并裁剪二维码/);
   assert.doesNotMatch(html, /丁爱民/);
 });

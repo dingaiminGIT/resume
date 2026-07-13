@@ -64,6 +64,83 @@ const SECTION_DEFINITIONS: SectionDefinition[] = [
 const ACCENTS = ["#2d8c87", "#3b6ea8", "#7c5b9e", "#a85c45"];
 const MAX_QR_SIDE = 420;
 
+type CropBox = { x: number; y: number; width: number; height: number };
+type BarcodeDetectorInstance = { detect: (source: HTMLCanvasElement) => Promise<Array<{ boundingBox: DOMRectReadOnly }>> };
+type BarcodeDetectorConstructor = new (options: { formats: string[] }) => BarcodeDetectorInstance;
+
+function squareCrop(box: CropBox, imageWidth: number, imageHeight: number, paddingRatio = 0.12): CropBox {
+  const centerX = box.x + box.width / 2;
+  const centerY = box.y + box.height / 2;
+  const side = Math.min(Math.max(box.width, box.height) * (1 + paddingRatio * 2), imageWidth, imageHeight);
+  return {
+    x: Math.max(0, Math.min(imageWidth - side, centerX - side / 2)),
+    y: Math.max(0, Math.min(imageHeight - side, centerY - side / 2)),
+    width: side,
+    height: side,
+  };
+}
+
+async function detectQrCrop(image: HTMLImageElement): Promise<CropBox | null> {
+  const Detector = (window as unknown as { BarcodeDetector?: BarcodeDetectorConstructor }).BarcodeDetector;
+  const scale = Math.min(1, 1200 / Math.max(image.naturalWidth, image.naturalHeight));
+  const canvas = document.createElement("canvas");
+  canvas.width = Math.max(1, Math.round(image.naturalWidth * scale));
+  canvas.height = Math.max(1, Math.round(image.naturalHeight * scale));
+  const context = canvas.getContext("2d");
+  if (!context) return null;
+  context.drawImage(image, 0, 0, canvas.width, canvas.height);
+
+  if (Detector) {
+    try {
+      const [result] = await new Detector({ formats: ["qr_code"] }).detect(canvas);
+      if (result) {
+        return squareCrop({
+          x: result.boundingBox.x / scale,
+          y: result.boundingBox.y / scale,
+          width: result.boundingBox.width / scale,
+          height: result.boundingBox.height / scale,
+        }, image.naturalWidth, image.naturalHeight);
+      }
+    } catch {
+      // Continue with the cross-browser decoder below.
+    }
+  }
+
+  try {
+    const { default: jsQR } = await import("jsqr");
+    const code = jsQR(context.getImageData(0, 0, canvas.width, canvas.height).data, canvas.width, canvas.height, {
+      inversionAttempts: "attemptBoth",
+    });
+    if (!code) return null;
+    const corners = [
+      code.location.topLeftCorner,
+      code.location.topRightCorner,
+      code.location.bottomLeftCorner,
+      code.location.bottomRightCorner,
+    ];
+    const minX = Math.min(...corners.map((point) => point.x));
+    const minY = Math.min(...corners.map((point) => point.y));
+    const maxX = Math.max(...corners.map((point) => point.x));
+    const maxY = Math.max(...corners.map((point) => point.y));
+    return squareCrop({
+      x: minX / scale,
+      y: minY / scale,
+      width: (maxX - minX) / scale,
+      height: (maxY - minY) / scale,
+    }, image.naturalWidth, image.naturalHeight);
+  } catch {
+    return null;
+  }
+}
+
+function centeredFallbackCrop(image: HTMLImageElement): CropBox {
+  const width = image.naturalWidth;
+  const height = image.naturalHeight;
+  const ratio = width / height;
+  const side = ratio > 0.86 && ratio < 1.14 ? Math.min(width, height) : Math.min(width, height) * 0.72;
+  return { x: (width - side) / 2, y: (height - side) / 2, width: side, height: side };
+}
+
 async function prepareQrImage(file: File) {
   if (!["image/png", "image/jpeg", "image/webp"].includes(file.type)) {
     throw new Error("format");
@@ -78,18 +155,31 @@ async function prepareQrImage(file: File) {
       candidate.onerror = () => reject(new Error("decode"));
       candidate.src = source;
     });
-    const scale = Math.min(1, MAX_QR_SIDE / Math.max(image.naturalWidth, image.naturalHeight));
+    const detectedCrop = await detectQrCrop(image);
+    const crop = detectedCrop ?? centeredFallbackCrop(image);
     const canvas = document.createElement("canvas");
-    canvas.width = Math.max(1, Math.round(image.naturalWidth * scale));
-    canvas.height = Math.max(1, Math.round(image.naturalHeight * scale));
+    canvas.width = MAX_QR_SIDE;
+    canvas.height = MAX_QR_SIDE;
     const context = canvas.getContext("2d");
     if (!context) throw new Error("canvas");
     context.fillStyle = "#ffffff";
     context.fillRect(0, 0, canvas.width, canvas.height);
-    context.drawImage(image, 0, 0, canvas.width, canvas.height);
+    context.imageSmoothingEnabled = false;
+    const outputPadding = 8;
+    context.drawImage(
+      image,
+      crop.x,
+      crop.y,
+      crop.width,
+      crop.height,
+      outputPadding,
+      outputPadding,
+      canvas.width - outputPadding * 2,
+      canvas.height - outputPadding * 2,
+    );
     const result = canvas.toDataURL("image/png");
     if (result.length > 1_500_000) throw new Error("size");
-    return result;
+    return { dataUrl: result, detected: Boolean(detectedCrop) };
   } finally {
     URL.revokeObjectURL(source);
   }
@@ -270,9 +360,9 @@ export function ResumeBuilder() {
     const file = event.target.files?.[0];
     if (!file) return;
     try {
-      const wechatQr = await prepareQrImage(file);
-      updateProfile("wechatQr", wechatQr);
-      setMessage("微信二维码已添加");
+      const { dataUrl, detected } = await prepareQrImage(file);
+      updateProfile("wechatQr", dataUrl);
+      setMessage(detected ? "已自动识别并裁剪二维码" : "已自动居中裁剪，请确认二维码完整");
     } catch {
       setMessage("二维码处理失败，请选择 8MB 以内的 PNG、JPG 或 WebP 图片");
     } finally {
@@ -370,7 +460,7 @@ export function ResumeBuilder() {
                         ) : null}
                       </div>
                     </div>
-                    <small>建议上传清晰的方形二维码；图片仅保存在当前浏览器中。</small>
+                    <small>上传后会自动识别并裁剪二维码；图片仅保存在当前浏览器中。</small>
                   </div>
                 </div>
               </>
