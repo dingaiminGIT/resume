@@ -8,6 +8,7 @@
   --charcoal: #202529;
   --teal: #2d8c87;
   --danger: #b65347;
+  --viewport-height: 100dvh;
   color-scheme: light;
 }
 
@@ -43,7 +44,7 @@ button { color: inherit; }
 }
 
 .builder-shell {
-  height: 100dvh;
+  height: var(--viewport-height);
   min-height: 100vh;
   display: grid;
   grid-template-rows: 64px minmax(0, 1fr);
