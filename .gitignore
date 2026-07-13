@@ -1,7 +1,7 @@
-node_modules*
-
-*~
-design
-.publish
-temp*
-question*
+node_modules/
+dist/
+.next/
+.wrangler/
+.artifacts/
+*.tsbuildinfo
+.DS_Store

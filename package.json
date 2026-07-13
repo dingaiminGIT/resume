@@ -1,35 +1,38 @@
 {
-  "name": "joyee-resume",
-  "version": "1.0.0",
-  "description": "Read resume data from a JSON file and generate a static web page.",
-  "main": "gulpfile.js",
+  "name": "dingaimin-resume",
+  "version": "2.0.0",
+  "private": true,
+  "description": "A modern, data-driven web resume built with React and vinext.",
+  "engines": {
+    "node": ">=22.13.0 <23 || >=24"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext dev",
+    "build": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext build",
+    "start": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext start",
+    "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
+    "test": "npm run build && node --test tests/rendered-html.test.mjs"
   },
-  "author": "Joyee Cheung <joyeec9h3@gmail.com>",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/joyeecheung/resume.git"
+  "dependencies": {
+    "lucide-react": "0.468.0",
+    "next": "16.2.6",
+    "react": "19.2.6",
+    "react-dom": "19.2.6"
   },
-  "dependencies": {},
   "devDependencies": {
-    "gulp": "^3.9.0",
-    "gulp-gh-pages": "^0.5.2",
-    "gulp-jade": "^1.0.0",
-    "gulp-less": "^3.0.0",
-    "gulp-live-server": "0.0.23",
-    "gulp-load-plugins": "^0.10.0",
-    "gulp-minify-css": "^1.1.6",
-    "gulp-sourcemaps": "^1.5.2",
-    "highlight.js": "^8.6.0",
-    "jade": "^1.10.0"
+    "@cloudflare/vite-plugin": "1.37.1",
+    "@types/node": "22.19.19",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.2",
+    "@vitejs/plugin-rsc": "0.5.26",
+    "eslint": "9.39.4",
+    "eslint-config-next": "16.2.6",
+    "react-server-dom-webpack": "19.2.6",
+    "typescript": "5.9.3",
+    "vinext": "0.0.50",
+    "vite": "8.0.13",
+    "wrangler": "4.92.0"
   },
-  "bugs": {
-    "url": "https://github.com/joyeecheung/resume/issues"
-  },
-  "homepage": "https://github.com/joyeecheung/resume",
-  "keywords": [
-    "resume"
-  ]
+  "type": "module"
 }
