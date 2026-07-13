@@ -11,6 +11,7 @@ export const sampleResume: ResumeData = {
     website: "github.com/example",
     wechatId: "",
     wechatQr: "",
+    wechatQrCropVersion: 2,
   },
   experience: [
     {

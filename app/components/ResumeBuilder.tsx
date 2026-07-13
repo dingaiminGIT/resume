@@ -63,12 +63,13 @@ const SECTION_DEFINITIONS: SectionDefinition[] = [
 
 const ACCENTS = ["#2d8c87", "#3b6ea8", "#7c5b9e", "#a85c45"];
 const MAX_QR_SIDE = 420;
+const QR_CROP_VERSION = 2;
 
 type CropBox = { x: number; y: number; width: number; height: number };
 type BarcodeDetectorInstance = { detect: (source: HTMLCanvasElement) => Promise<Array<{ boundingBox: DOMRectReadOnly }>> };
 type BarcodeDetectorConstructor = new (options: { formats: string[] }) => BarcodeDetectorInstance;
 
-function squareCrop(box: CropBox, imageWidth: number, imageHeight: number, paddingRatio = 0.12): CropBox {
+function squareCrop(box: CropBox, imageWidth: number, imageHeight: number, paddingRatio = 0.05): CropBox {
   const centerX = box.x + box.width / 2;
   const centerY = box.y + box.height / 2;
   const side = Math.min(Math.max(box.width, box.height) * (1 + paddingRatio * 2), imageWidth, imageHeight);
@@ -165,7 +166,7 @@ async function prepareQrImage(file: Blob) {
     context.fillStyle = "#ffffff";
     context.fillRect(0, 0, canvas.width, canvas.height);
     context.imageSmoothingEnabled = false;
-    const outputPadding = 8;
+    const outputPadding = 4;
     context.drawImage(
       image,
       crop.x,
@@ -261,31 +262,30 @@ export function ResumeBuilder() {
 
   useEffect(() => {
     const savedQr = data.profile.wechatQr;
-    if (!hydrated || migratedQrRef.current || !savedQr?.startsWith("data:image/")) return;
+    if (
+      !hydrated
+      || migratedQrRef.current
+      || !savedQr?.startsWith("data:image/")
+      || data.profile.wechatQrCropVersion === QR_CROP_VERSION
+    ) return;
     migratedQrRef.current = true;
     let cancelled = false;
-    const image = new window.Image();
-    image.onload = () => {
-      if (Math.abs(image.naturalWidth / image.naturalHeight - 1) < 0.03) return;
-      void fetch(savedQr)
-        .then((response) => response.blob())
-        .then(prepareQrImage)
-        .then(({ dataUrl }) => {
-          if (cancelled) return;
-          setData((current) => current.profile.wechatQr === savedQr ? {
-            ...current,
-            profile: { ...current.profile, wechatQr: dataUrl },
-          } : current);
-          setMessage("已自动裁剪原有二维码");
-        })
-        .catch(() => undefined);
-    };
-    image.src = savedQr;
+    void fetch(savedQr)
+      .then((response) => response.blob())
+      .then(prepareQrImage)
+      .then(({ dataUrl }) => {
+        if (cancelled) return;
+        setData((current) => current.profile.wechatQr === savedQr ? {
+          ...current,
+          profile: { ...current.profile, wechatQr: dataUrl, wechatQrCropVersion: QR_CROP_VERSION },
+        } : current);
+        setMessage("已自动收紧原有二维码留白");
+      })
+      .catch(() => undefined);
     return () => {
       cancelled = true;
-      image.src = "";
     };
-  }, [data.profile.wechatQr, hydrated]);
+  }, [data.profile.wechatQr, data.profile.wechatQrCropVersion, hydrated]);
 
   function updateProfile(field: keyof ResumeData["profile"], value: string) {
     setData((current) => ({
@@ -390,7 +390,10 @@ export function ResumeBuilder() {
     if (!file) return;
     try {
       const { dataUrl, detected } = await prepareQrImage(file);
-      updateProfile("wechatQr", dataUrl);
+      setData((current) => ({
+        ...current,
+        profile: { ...current.profile, wechatQr: dataUrl, wechatQrCropVersion: QR_CROP_VERSION },
+      }));
       setMessage(detected ? "已自动识别并裁剪二维码" : "已自动居中裁剪，请确认二维码完整");
     } catch {
       setMessage("二维码处理失败，请选择 8MB 以内的 PNG、JPG 或 WebP 图片");
@@ -483,7 +486,14 @@ export function ResumeBuilder() {
                           <input className="visually-hidden" type="file" accept="image/png,image/jpeg,image/webp" onChange={uploadWechatQr} />
                         </label>
                         {data.profile.wechatQr ? (
-                          <button type="button" className="qr-remove-button" onClick={() => updateProfile("wechatQr", "")}>
+                          <button
+                            type="button"
+                            className="qr-remove-button"
+                            onClick={() => setData((current) => ({
+                              ...current,
+                              profile: { ...current.profile, wechatQr: "", wechatQrCropVersion: QR_CROP_VERSION },
+                            }))}
+                          >
                             <Trash2 aria-hidden="true" />删除二维码
                           </button>
                         ) : null}

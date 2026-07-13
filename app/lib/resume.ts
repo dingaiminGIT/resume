@@ -33,6 +33,7 @@ export type ResumeData = {
     website: string;
     wechatId?: string;
     wechatQr?: string;
+    wechatQrCropVersion?: number;
   };
   experience: Experience[];
   skills: SkillGroup[];

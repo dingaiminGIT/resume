@@ -455,7 +455,7 @@ button { color: inherit; }
 .preview-qr {
   width: 64px;
   height: 64px;
-  padding: 3px;
+  padding: 1px;
   border: 1px solid rgb(255 255 255 / 55%);
   background: white;
   object-fit: contain;
