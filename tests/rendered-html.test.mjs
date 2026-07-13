@@ -13,7 +13,10 @@ test("renders the resume shell", async () => {
   assert.match(html, /履历工坊/);
   assert.match(html, /基本信息/);
   assert.match(html, /打印 \/ PDF/);
-  assert.match(html, /上传微信二维码/);
+  assert.match(html, /更换二维码/);
   assert.match(html, /自动识别并裁剪二维码/);
+  assert.match(html, /value="baiya"/);
+  assert.match(html, /src="\/default-wechat-qr\.jpg"/);
+  assert.doesNotMatch(html, /jianchuan\.lin@example\.com/);
   assert.doesNotMatch(html, /丁爱民/);
 });

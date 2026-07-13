@@ -50,7 +50,9 @@ function StarList({ items }: { items: string[] }) {
 
 export function ResumePreview({ data, style }: { data: ResumeData; style: ResumeStyle }) {
   const initials = data.profile.name.trim().slice(0, 2).toUpperCase() || "CV";
-  const qrImage = data.profile.wechatQr?.startsWith("data:image/") ? data.profile.wechatQr : "";
+  const qrImage = data.profile.wechatQr?.startsWith("data:image/") || data.profile.wechatQr?.startsWith("/")
+    ? data.profile.wechatQr
+    : "";
   const variables = { "--accent": style.accent } as CSSProperties;
 
   return (

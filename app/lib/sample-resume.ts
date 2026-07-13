@@ -6,11 +6,11 @@ export const sampleResume: ResumeData = {
     name: "白牙",
     title: "Agent 开发工程师",
     phone: "138-0013-8000",
-    email: "jianchuan.lin@example.com",
+    email: "baiya",
     location: "北京 · 中国",
     website: "github.com/agent-lab",
     wechatId: "",
-    wechatQr: "",
+    wechatQr: "/default-wechat-qr.jpg",
     wechatQrCropVersion: 2,
   },
   experience: [
