@@ -2,7 +2,7 @@
   "name": "dingaimin-resume",
   "version": "2.0.0",
   "private": true,
-  "description": "A modern, data-driven web resume built with React and vinext.",
+  "description": "A privacy-first, live-preview resume builder built with React and vinext.",
   "engines": {
     "node": ">=22.13.0 <23 || >=24"
   },

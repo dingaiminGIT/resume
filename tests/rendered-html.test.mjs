@@ -10,7 +10,8 @@ test("renders the resume shell", async () => {
   );
   const html = await response.text();
   assert.equal(response.status, 200);
-  assert.match(html, /丁爱民/);
-  assert.match(html, /工作经历/);
-  assert.match(html, /专业技能/);
+  assert.match(html, /履历工坊/);
+  assert.match(html, /基本信息/);
+  assert.match(html, /打印 \/ PDF/);
+  assert.doesNotMatch(html, /丁爱民/);
 });
