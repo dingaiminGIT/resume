@@ -3,7 +3,7 @@ import type { ResumeData, ResumeStyle } from "./resume";
 export const sampleResume: ResumeData = {
   version: 1,
   profile: {
-    name: "林见川",
+    name: "白牙",
     title: "Agent 开发工程师",
     phone: "138-0013-8000",
     email: "jianchuan.lin@example.com",
