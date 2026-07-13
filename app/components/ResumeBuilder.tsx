@@ -9,6 +9,7 @@ import Monitor from "lucide-react/dist/esm/icons/monitor";
 import Palette from "lucide-react/dist/esm/icons/palette";
 import Plus from "lucide-react/dist/esm/icons/plus";
 import Printer from "lucide-react/dist/esm/icons/printer";
+import QrCode from "lucide-react/dist/esm/icons/qr-code";
 import RotateCcw from "lucide-react/dist/esm/icons/rotate-ccw";
 import Rows3 from "lucide-react/dist/esm/icons/rows-3";
 import Trash2 from "lucide-react/dist/esm/icons/trash-2";
@@ -61,6 +62,38 @@ const SECTION_DEFINITIONS: SectionDefinition[] = [
 ];
 
 const ACCENTS = ["#2d8c87", "#3b6ea8", "#7c5b9e", "#a85c45"];
+const MAX_QR_SIDE = 420;
+
+async function prepareQrImage(file: File) {
+  if (!["image/png", "image/jpeg", "image/webp"].includes(file.type)) {
+    throw new Error("format");
+  }
+  if (file.size > 8 * 1024 * 1024) throw new Error("size");
+
+  const source = URL.createObjectURL(file);
+  try {
+    const image = await new Promise<HTMLImageElement>((resolve, reject) => {
+      const candidate = new window.Image();
+      candidate.onload = () => resolve(candidate);
+      candidate.onerror = () => reject(new Error("decode"));
+      candidate.src = source;
+    });
+    const scale = Math.min(1, MAX_QR_SIDE / Math.max(image.naturalWidth, image.naturalHeight));
+    const canvas = document.createElement("canvas");
+    canvas.width = Math.max(1, Math.round(image.naturalWidth * scale));
+    canvas.height = Math.max(1, Math.round(image.naturalHeight * scale));
+    const context = canvas.getContext("2d");
+    if (!context) throw new Error("canvas");
+    context.fillStyle = "#ffffff";
+    context.fillRect(0, 0, canvas.width, canvas.height);
+    context.drawImage(image, 0, 0, canvas.width, canvas.height);
+    const result = canvas.toDataURL("image/png");
+    if (result.length > 1_500_000) throw new Error("size");
+    return result;
+  } finally {
+    URL.revokeObjectURL(source);
+  }
+}
 
 function cloneSample() {
   return structuredClone(sampleResume);
@@ -126,7 +159,11 @@ export function ResumeBuilder() {
   useEffect(() => {
     if (!hydrated) return;
     const timer = window.setTimeout(() => {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({ data, style } satisfies StoredPayload));
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({ data, style } satisfies StoredPayload));
+      } catch {
+        setMessage("本地存储空间不足，请更换更小的二维码图片");
+      }
     }, 350);
     return () => window.clearTimeout(timer);
   }, [data, hydrated, style]);
@@ -229,6 +266,20 @@ export function ResumeBuilder() {
     }
   }
 
+  async function uploadWechatQr(event: ChangeEvent<HTMLInputElement>) {
+    const file = event.target.files?.[0];
+    if (!file) return;
+    try {
+      const wechatQr = await prepareQrImage(file);
+      updateProfile("wechatQr", wechatQr);
+      setMessage("微信二维码已添加");
+    } catch {
+      setMessage("二维码处理失败，请选择 8MB 以内的 PNG、JPG 或 WebP 图片");
+    } finally {
+      event.target.value = "";
+    }
+  }
+
   function resetResume() {
     if (!window.confirm("确定恢复示例数据吗？当前编辑内容会被覆盖。")) return;
     setData(cloneSample());
@@ -296,6 +347,31 @@ export function ResumeBuilder() {
                   <Field label="邮箱" type="email" value={data.profile.email} onChange={(event) => updateProfile("email", event.target.value)} />
                   <Field label="所在地" value={data.profile.location} onChange={(event) => updateProfile("location", event.target.value)} />
                   <Field label="个人网站" value={data.profile.website} onChange={(event) => updateProfile("website", event.target.value)} />
+                  <Field label="微信号" value={data.profile.wechatId ?? ""} onChange={(event) => updateProfile("wechatId", event.target.value)} />
+                  <div className="qr-field">
+                    <span>微信二维码</span>
+                    <div className="qr-upload-row">
+                      {data.profile.wechatQr ? (
+                        // eslint-disable-next-line @next/next/no-img-element -- The user-selected local data URL is already resized client-side.
+                        <img className="qr-upload-preview" src={data.profile.wechatQr} alt="已选择的微信二维码" />
+                      ) : (
+                        <span className="qr-upload-placeholder"><QrCode aria-hidden="true" /></span>
+                      )}
+                      <div className="qr-upload-actions">
+                        <label className="qr-upload-button">
+                          <Upload aria-hidden="true" />
+                          {data.profile.wechatQr ? "更换二维码" : "上传微信二维码"}
+                          <input className="visually-hidden" type="file" accept="image/png,image/jpeg,image/webp" onChange={uploadWechatQr} />
+                        </label>
+                        {data.profile.wechatQr ? (
+                          <button type="button" className="qr-remove-button" onClick={() => updateProfile("wechatQr", "")}>
+                            <Trash2 aria-hidden="true" />删除二维码
+                          </button>
+                        ) : null}
+                      </div>
+                    </div>
+                    <small>建议上传清晰的方形二维码；图片仅保存在当前浏览器中。</small>
+                  </div>
                 </div>
               </>
             ) : null}

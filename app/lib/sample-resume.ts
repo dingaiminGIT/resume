@@ -9,6 +9,8 @@ export const sampleResume: ResumeData = {
     email: "chenmo@example.com",
     location: "上海 · 中国",
     website: "github.com/example",
+    wechatId: "",
+    wechatQr: "",
   },
   experience: [
     {

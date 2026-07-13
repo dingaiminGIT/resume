@@ -229,6 +229,44 @@ button { color: inherit; }
 .form-field input:focus,
 .form-field textarea:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgb(45 140 135 / 10%); }
 
+.qr-field { display: grid; gap: 8px; }
+.qr-field > span { color: #475156; font-size: 13px; font-weight: 650; }
+.qr-field > small { color: #8a9397; font-size: 11px; line-height: 1.55; }
+.qr-upload-row { display: flex; align-items: center; gap: 14px; }
+.qr-upload-preview,
+.qr-upload-placeholder {
+  width: 76px;
+  height: 76px;
+  display: grid;
+  place-items: center;
+  flex: none;
+  border: 1px solid #d5dbde;
+  border-radius: 4px;
+  background: #f7f9f9;
+}
+.qr-upload-preview { object-fit: contain; padding: 4px; background: white; }
+.qr-upload-placeholder { color: #9aa4a8; }
+.qr-upload-placeholder svg { width: 30px; height: 30px; stroke-width: 1.5; }
+.qr-upload-actions { display: flex; align-items: flex-start; flex-direction: column; gap: 8px; }
+.qr-upload-button,
+.qr-remove-button {
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 650;
+}
+.qr-upload-button { border: 1px solid #7da8a5; color: var(--teal); background: #f2f8f7; }
+.qr-remove-button { padding: 0; border: 0; color: var(--danger); background: transparent; }
+.qr-upload-button:hover { background: #e8f4f3; }
+.qr-upload-button:focus-within { outline: 2px solid var(--teal); outline-offset: 2px; }
+.qr-upload-button svg,
+.qr-remove-button svg { width: 15px; height: 15px; }
+
 .next-section-button {
   min-height: 40px;
   display: flex;
@@ -407,6 +445,22 @@ button { color: inherit; }
   font-size: 20px;
   font-weight: 800;
 }
+.preview-qr-wrap {
+  width: 64px;
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  margin: 0;
+}
+.preview-qr {
+  width: 64px;
+  height: 64px;
+  padding: 3px;
+  border: 1px solid rgb(255 255 255 / 55%);
+  background: white;
+  object-fit: contain;
+}
+.preview-qr-wrap figcaption { color: #d6dcde; font-size: 8px; line-height: 1; white-space: nowrap; }
 .preview-contact {
   display: grid;
   gap: 2px;

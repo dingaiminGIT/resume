@@ -4,6 +4,7 @@ import GraduationCap from "lucide-react/dist/esm/icons/graduation-cap";
 import Globe from "lucide-react/dist/esm/icons/globe";
 import Mail from "lucide-react/dist/esm/icons/mail";
 import MapPin from "lucide-react/dist/esm/icons/map-pin";
+import MessageCircle from "lucide-react/dist/esm/icons/message-circle";
 import Phone from "lucide-react/dist/esm/icons/phone";
 import Star from "lucide-react/dist/esm/icons/star";
 import UserRound from "lucide-react/dist/esm/icons/user-round";
@@ -49,17 +50,27 @@ function StarList({ items }: { items: string[] }) {
 
 export function ResumePreview({ data, style }: { data: ResumeData; style: ResumeStyle }) {
   const initials = data.profile.name.trim().slice(0, 2).toUpperCase() || "CV";
+  const qrImage = data.profile.wechatQr?.startsWith("data:image/") ? data.profile.wechatQr : "";
   const variables = { "--accent": style.accent } as CSSProperties;
 
   return (
     <article className="resume-preview" data-density={style.density} style={variables} aria-label="简历实时预览">
       <header className="preview-hero">
-        <div className="preview-mark" aria-hidden="true">{initials}</div>
+        {qrImage ? (
+          <figure className="preview-qr-wrap">
+            {/* eslint-disable-next-line @next/next/no-img-element -- The local QR data URL is pre-sized before it reaches the preview. */}
+            <img className="preview-qr" src={qrImage} alt="微信二维码" />
+            <figcaption>微信扫码</figcaption>
+          </figure>
+        ) : (
+          <div className="preview-mark" aria-hidden="true">{initials}</div>
+        )}
         <address className="preview-contact">
           <Contact icon={Phone}>{data.profile.phone}</Contact>
           <Contact icon={Mail}>{data.profile.email}</Contact>
           <Contact icon={MapPin}>{data.profile.location}</Contact>
           <Contact icon={Globe}>{data.profile.website}</Contact>
+          {data.profile.wechatId ? <Contact icon={MessageCircle}>{data.profile.wechatId}</Contact> : null}
         </address>
         <div className="preview-name">
           <h1>{data.profile.name || "你的姓名"}</h1>

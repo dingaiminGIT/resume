@@ -31,6 +31,8 @@ export type ResumeData = {
     email: string;
     location: string;
     website: string;
+    wechatId?: string;
+    wechatQr?: string;
   };
   experience: Experience[];
   skills: SkillGroup[];
