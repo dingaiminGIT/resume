@@ -141,7 +141,7 @@ function centeredFallbackCrop(image: HTMLImageElement): CropBox {
   return { x: (width - side) / 2, y: (height - side) / 2, width: side, height: side };
 }
 
-async function prepareQrImage(file: File) {
+async function prepareQrImage(file: Blob) {
   if (!["image/png", "image/jpeg", "image/webp"].includes(file.type)) {
     throw new Error("format");
   }
@@ -226,6 +226,7 @@ export function ResumeBuilder() {
   const [message, setMessage] = useState("");
   const [hydrated, setHydrated] = useState(false);
   const importRef = useRef<HTMLInputElement>(null);
+  const migratedQrRef = useRef(false);
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -257,6 +258,34 @@ export function ResumeBuilder() {
     }, 350);
     return () => window.clearTimeout(timer);
   }, [data, hydrated, style]);
+
+  useEffect(() => {
+    const savedQr = data.profile.wechatQr;
+    if (!hydrated || migratedQrRef.current || !savedQr?.startsWith("data:image/")) return;
+    migratedQrRef.current = true;
+    let cancelled = false;
+    const image = new window.Image();
+    image.onload = () => {
+      if (Math.abs(image.naturalWidth / image.naturalHeight - 1) < 0.03) return;
+      void fetch(savedQr)
+        .then((response) => response.blob())
+        .then(prepareQrImage)
+        .then(({ dataUrl }) => {
+          if (cancelled) return;
+          setData((current) => current.profile.wechatQr === savedQr ? {
+            ...current,
+            profile: { ...current.profile, wechatQr: dataUrl },
+          } : current);
+          setMessage("已自动裁剪原有二维码");
+        })
+        .catch(() => undefined);
+    };
+    image.src = savedQr;
+    return () => {
+      cancelled = true;
+      image.src = "";
+    };
+  }, [data.profile.wechatQr, hydrated]);
 
   function updateProfile(field: keyof ResumeData["profile"], value: string) {
     setData((current) => ({
