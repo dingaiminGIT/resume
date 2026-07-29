@@ -11,6 +11,9 @@ test("renders the resume shell", async () => {
   const html = await response.text();
   assert.equal(response.status, 200);
   assert.match(html, /履历工坊/);
+  assert.match(html, /履历工坊｜白牙技术笔记/);
+  assert.match(html, /京ICP备2026045992号-1/);
+  assert.match(html, /https:\/\/beian\.miit\.gov\.cn\//);
   assert.match(html, /基本信息/);
   assert.match(html, /打印 \/ PDF/);
   assert.match(html, /更换二维码/);

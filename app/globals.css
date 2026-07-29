@@ -25,6 +25,18 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.site-compliance {
+  position: fixed;
+  right: 10px;
+  bottom: 5px;
+  z-index: 30;
+  font-size: 10px;
+  line-height: 1;
+}
+
+.site-compliance a { color: #687277; text-decoration: none; }
+.site-compliance a:hover, .site-compliance a:focus-visible { color: #2d8c87; text-decoration: underline; }
+
 button,
 input,
 textarea { font: inherit; }
@@ -637,6 +649,7 @@ button { color: inherit; }
   .editor-panel,
   .preview-toolbar,
   .status-message { display: none !important; }
+  .site-compliance { display: none !important; }
   .builder-workspace,
   .preview-panel,
   .preview-scroll { display: block !important; overflow: visible; padding: 0; background: white; }
