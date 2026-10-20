@@ -93,6 +93,28 @@
                 "**gc问题排查**：https://blog.csdn.net/dam454450872/article/details/89977927、https://blog.csdn.net/dam454450872/article/details/90166094、https://blog.csdn.net/dam454450872/article/details/100065622",
                 "**Top99超时排查**：https://blog.csdn.net/dam454450872/article/details/110848633"
             ]
+        },
+        {
+            "type": "work",
+            "techtype": "Java",
+            "place": "饿了么 - Java研发",
+            "start": "2018年1月",
+            "end": "2018年4月",
+            "name": "无人货架-Java / 后端开发",
+            "description": [
+                "**工作职责**：负责饿了么无人货架后端开发"
+            ]
+        },
+        {
+            "type": "work",
+            "techtype": "Java",
+            "place": "圣亚云鼎支付 - Java研发",
+            "start": "2016年11月",
+            "end": "2018年1月",
+            "name": "第三方支付-Java / 后端开发",
+            "description": [
+                "**工作职责**：负责第三方支付系统的网关、交易系统、通知系统等模块服务端开发"
+            ]
         }
     ],
     "evaluation": [
